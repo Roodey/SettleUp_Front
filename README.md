@@ -1,7 +1,9 @@
 # settle-up-front
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Ember-cli version 2.11.1
+Node version 6.10.0
+
+Firebase for development.
 
 ## Prerequisites
 
