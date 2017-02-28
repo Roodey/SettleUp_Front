@@ -6,6 +6,21 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: "AIzaSyCjit5WKHy6laKePU6XprF2XrvtN9MNeSc",
+      authDomain: "settleup-cb4db.firebaseapp.com",
+      databaseURL: "https://settleup-cb4db.firebaseio.com",
+      storageBucket: "settleup-cb4db.appspot.com",
+      messagingSenderId: "477462892458"
+    },
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -25,10 +40,10 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
+     ENV.APP.LOG_ACTIVE_GENERATION = true;
+     ENV.APP.LOG_TRANSITIONS = true;
+     ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
+     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
