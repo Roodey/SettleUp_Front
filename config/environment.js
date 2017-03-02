@@ -14,6 +14,10 @@ module.exports = function(environment) {
       storageBucket: "settleup-cb4db.appspot.com",
       messagingSenderId: "477462892458"
     },
+    firebase: "https://settleup-cb4db.firebaseapp.com/",
+    torii: {
+      sessionServiceName:'session'
+    },
     // if using ember-cli-content-security-policy
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
