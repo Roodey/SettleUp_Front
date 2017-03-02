@@ -14,7 +14,6 @@ module.exports = function(environment) {
       storageBucket: "settleup-cb4db.appspot.com",
       messagingSenderId: "477462892458"
     },
-    firebase: "https://settleup-cb4db.firebaseapp.com/",
     torii: {
       sessionServiceName:'session'
     },

@@ -8,7 +8,10 @@ export default Ember.Route.extend({
 
   actions:{
     login(){
-      get(this,'session').open('firebase', {provider: 'twitter'}).then(data => console.log(data));
+      get(this,'session').open('firebase', {provider: 'twitter'}).then(data => {
+        //TODO: SEND THIS DATA TO THE DATABASE SO LOGIN CAN BE STORED
+        console.log(data);
+      });
     },
     logout(){
       get(this,'session').close();

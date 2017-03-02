@@ -1,4 +1,15 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{!-- Feel free to remove this! --}}
 <h1 class="text-center text-info">COMING SOON</h1>
+<ul class="nav navbar-nav navbar-right">
+  {{#unless session.isAuthenticated}}
+  <li><a href="#" {{action 'login' }}>Login</a></li>
+  {{else}}
+  <li><a href="#" {{action 'logout' }}>Logout</a></li>
+  <li>
+    <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank'>
+      <img src='{{session.currentUser.profileImageURL}}' height='30px' width='30px' />
+    </a>
+  </li>
+  {{/unless}}
+</ul>
+
 {{outlet}}
