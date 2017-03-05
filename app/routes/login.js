@@ -10,10 +10,10 @@ export default Ember.Route.extend({
           //TODO: SEND THIS DATA TO THE DATABASE SO LOGIN CAN BE STORED
           console.log(data);
 //TODO: IMPLEMENT QUERYRECORD SO WE CAN SEE IF THEY HAVE MADE AN ACCOUNT YET.
-          var user = this.store.queryRecord('user',data.currentUser.email);
-          console.log(user);
+          //var user = this.store.queryRecord('user',data.currentUser.email);
+          //console.log(user);
 
-          //this.transitionTo('index');
+          this.transitionTo('index');
         });
 
           },
