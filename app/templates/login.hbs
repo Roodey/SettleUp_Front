@@ -1,0 +1,12 @@
+
+<div class="container-fluid">
+  <div class="col-md-4 col-md-offset-4">
+{{input value=username class="form-control" placeholder="Username"}}
+{{input value=password class="form-control" placeholder="Password"}}
+<button class="btn btn-success" {{action 'login' "standard"}}>Login</button>
+<button class="btn btn-primary" {{action 'login' "facebook"}}>Facebook Login</button>
+<button class="btn btn-google" {{action 'login' 'google'}}>Google Login</button>
+<button class="btn btn-twitter" {{action 'login' 'twitter'}}>Twitter Login</button>
+<button class="btn btn-danger pull-right" {{action 'logout'}}>Logout</button>
+  </div>
+</div>

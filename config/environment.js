@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'settle-up-front',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
 
     firebase: {
       apiKey: "AIzaSyCjit5WKHy6laKePU6XprF2XrvtN9MNeSc",

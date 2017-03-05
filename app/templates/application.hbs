@@ -1,15 +1,19 @@
+<div class="container-fluid">
 <h1 class="text-center text-info">COMING SOON</h1>
 <ul class="nav navbar-nav navbar-right">
-  {{#unless session.isAuthenticated}}
-  <li><a href="#" {{action 'login' }}>Login</a></li>
-  {{else}}
-  <li><a href="#" {{action 'logout' }}>Logout</a></li>
+{{#if session.isAuthenticated}}
+
+
   <li>
-    <a href='http://twitter.com/{{session.currentUser.username}}' target='_blank'>
-      <img src='{{session.currentUser.profileImageURL}}' height='30px' width='30px' />
-    </a>
+    <p class="text-danger">TODO:</p><p class="text-info">Fill this with login data</p>
   </li>
-  {{/unless}}
+  <li>
+    <button class="btn btn-danger btn-xs" {{action 'logout'}}>Logout</button>
+  </li>
+{{else}}
+<li><p class="text-info">You are not logged in</p></li>
+{{/if}}
 </ul>
 
 {{outlet}}
+</div>
