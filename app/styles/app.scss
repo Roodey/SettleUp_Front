@@ -1,10 +1,17 @@
 @import 'bootstrap';
 
-.btn-twitter{
-  background-color:#10bcd3;
-  color:#FFF;
+//All things strictly text related
+@import 'text-style.scss';
+
+//buttons
+@import 'button-style.scss';
+
+
+.applicationWrapper{
+  background-color: #01033a;
 }
-.btn-google{
-  background-color:#d34810;
-  color:#FFF;
+
+html, body, .ember-view, .applicationWrapper{
+  height:100%;
 }
+

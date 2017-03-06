@@ -1,11 +1,13 @@
-<div class="container-fluid">
-<h1 class="text-center text-info">COMING SOON</h1>
+<div class="container-fluid applicationWrapper">
+<ul class="nav navbar-nav navbar-right">
+  <li>{{#link-to "idea" class="btn btn-success"}}
+    Create Idea
+  {{/link-to}}</li>
+  <li>
 <ul class="nav navbar-nav navbar-right">
 {{#if session.isAuthenticated}}
-
-
   <li>
-    <p class="text-danger">TODO:</p><p class="text-info">Fill this with login data</p>
+    <p class="text-danger">{{session}}</p><p class="text-info">Fill this with login data</p>
   </li>
   <li>
     <button class="btn btn-danger btn-xs" {{action 'logout'}}>Logout</button>
@@ -14,6 +16,8 @@
 <li><p class="text-info">You are not logged in</p></li>
 {{/if}}
 </ul>
+  </li>
 
+</ul>
 {{outlet}}
 </div>

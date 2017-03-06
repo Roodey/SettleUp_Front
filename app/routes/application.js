@@ -2,9 +2,9 @@ import Ember from 'ember';
 const {get} = Ember;
 export default Ember.Route.extend({
   beforeModel(){
-    return get(this,'session').fetch().catch(data =>{
+    return get(this,'session').fetch().then(test => console.log(test)).catch(data =>{
       console.log(data);
-      this.transitionTo('login');
+      //this.transitionTo('login');
 
     });
   },
