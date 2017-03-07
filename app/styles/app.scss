@@ -1,5 +1,8 @@
 @import 'bootstrap';
 
+//Variables
+@import 'vars.scss';
+
 //All things strictly text related
 @import 'text-style.scss';
 
@@ -8,7 +11,11 @@
 
 
 .applicationWrapper{
-  background-color: #01033a;
+  background-color:$darkBlue;
+  background-image: radial-gradient(circle, transparent 70%, $mainBlue 60%);
+  background-size: 10px;
+  background-blend-mode: color-burn;
+  background-repeat: repeat;
 }
 
 html, body, .ember-view, .applicationWrapper{
