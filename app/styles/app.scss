@@ -1,4 +1,4 @@
-@import 'bootstrap';
+﻿@import 'bootstrap';
 
 //Variables
 @import 'vars.scss';
@@ -8,6 +8,9 @@
 
 //buttons
 @import 'button-style.scss';
+
+//panels
+@import 'panel.scss';
 
 
 .applicationWrapper{
@@ -22,3 +25,9 @@ html, body, .ember-view, .applicationWrapper{
   height:100%;
 }
 
+.content-head{
+  height:75px;
+}
+
+.content-body{
+}

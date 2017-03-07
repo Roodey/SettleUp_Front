@@ -1,9 +1,10 @@
-<div class="container-fluid applicationWrapper">
-<ul class="nav navbar-nav navbar-right">
-  <li>{{#link-to "idea" class="btn btn-success"}}
-    Create Idea
-  {{/link-to}}</li>
-  <li>
+﻿<div class="container-fluid applicationWrapper">
+  <div class="content-head">
+    <ul class="nav navbar-nav navbar-left btn-group">
+      <li class="btn btn-default btn-xs">{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li class="btn btn-default btn-xs">{{#link-to 'idea'}}Create Idea{{/link-to}}</li>
+    </ul>
+  
 <ul class="nav navbar-nav navbar-right">
 {{#if session.isAuthenticated}}
   <li>
@@ -16,8 +17,8 @@
 <li><p class="text-info">You are not logged in</p></li>
 {{/if}}
 </ul>
-  </li>
-
-</ul>
+</div>
+<div class="content-body">
 {{outlet}}
+</div>
 </div>
