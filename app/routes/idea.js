@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
   actions:{
     submitIdea(newIdea){
-      newIdea.save().then(response => {
+      newIdea.save().then(()=> {
         newIdea.rollbackAttributes();
         this.transitionTo('index');
       });
