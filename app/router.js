@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('idea', function() {
+    this.route('index',{path:'/:idea_id'});
     this.route('new');
   });
 });

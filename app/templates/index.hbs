@@ -10,10 +10,10 @@
 {{#each model as |idea|}}
 <div class=" col-sm-4 col-md-4">
   <div class="panel panel-default">
-    <div class="panel-heading">{{idea.name}}</div>
+    <div class="panel-heading">{{idea.title}}</div>
     <div class="panel-body">{{idea.description}}</div>
     <div class="panel-footer">
-      {{#link-to "idea.index" idea.id}}
+      {{#link-to "idea.index" idea}}
         View
       {{/link-to}}
     </div>
