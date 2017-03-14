@@ -1,4 +1,4 @@
-﻿<p>Welcome to the index template!</p>
+﻿<p class="hidden-xs">Welcome to the index template!</p>
 <!--<iframe src="//giphy.com/embed/pFwRzOLfuGHok" width="480" height="299" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <p><a href="http://giphy.com/gifs/next-pFwRzOLfuGHok">via GIPHY</a></p>-->
 
@@ -12,7 +12,11 @@
   <div class="panel panel-default">
     <div class="panel-heading">{{idea.name}}</div>
     <div class="panel-body">{{idea.description}}</div>
-    <div class="panel-footer"><a href="#">TODO: make a link to each idea</a></div>
+    <div class="panel-footer">
+      {{#link-to "idea.index" idea.id}}
+        View
+      {{/link-to}}
+    </div>
   </div>
 </div>
 {{/each}}

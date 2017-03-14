@@ -5,6 +5,6 @@ export default DS.Model.extend({
   author: DS.attr('string'),
   description: DS.attr('string'),
   created: DS.attr('date'),
-  content: DS.hasMany('details'),
+  content: DS.hasMany('detail'),
 
 });

@@ -1,4 +1,6 @@
-import FirebaseAdapter from 'emberfire/adapters/firebase';
+import WebApiAdapter from 'ember-web-api/adapters/web-api';
 
-export default FirebaseAdapter.extend({
+export default WebApiAdapter.extend({
+  host:'http://settleup.azurewebsites.net',
+  namespace:'api'
 });
