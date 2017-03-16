@@ -1,6 +1,6 @@
 import WebApiAdapter from 'ember-web-api/adapters/web-api';
 
 export default WebApiAdapter.extend({
-  host:'http://settleup.azurewebsites.net',
+  //host:'https://settleup.azurewebsites.net', uncomment this during publish
   namespace:'api'
 });
