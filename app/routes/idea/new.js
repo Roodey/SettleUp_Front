@@ -7,7 +7,9 @@ model(){
 
   actions:{
     submitIdea(newIdea){
-      newIdea.save().then(()=> {
+      console.log(newIdea.get('id'));
+      newIdea.save().then((responseIdea)=> {
+        console.log(responseIdea.get('id'));
         newIdea.rollbackAttributes();
         this.transitionTo('index');
       });

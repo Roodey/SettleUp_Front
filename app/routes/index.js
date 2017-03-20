@@ -7,7 +7,10 @@ export default Ember.Route.extend({
     }
   },
   model(){
-    var ideas = this.store.findAll('idea');
+    var ideas = this.store.findAll('idea').then(response => console.log(response)).catch(error =>{
+      console.error('there was an error');
+      console.log(error);
+    });
     console.log(ideas);
     return ideas;
 
