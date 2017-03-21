@@ -10,8 +10,10 @@ model(){
       console.log(newIdea.get('id'));
       newIdea.save().then((responseIdea)=> {
         newIdea.rollbackAttributes();
-      }).catch(error => console.log(error));
-      this.transitionTo('index');
+      }).catch(error => {
+        console.log(error)
+      });
+      //this.transitionTo('index');
     }
   },
   willTransition(){
