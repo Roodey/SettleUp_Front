@@ -11,9 +11,9 @@ model(){
       newIdea.save().then((responseIdea)=> {
         newIdea.rollbackAttributes();
       }).catch(error => {
-        console.log(error)
+        console.log(error);
       });
-      //this.transitionTo('index');
+      this.transitionTo('index');
     }
   },
   willTransition(){
