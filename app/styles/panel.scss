@@ -1,13 +1,14 @@
 ﻿@mixin panel-shadow($position){
   box-shadow: black $position inset;
 }
-
+.panel-default{
+    @include panel-shadow(5px);
+}
 .panel-header{
 }
 
 .panel-body {
   background-color: #c0c3c6;
-  @include panel-shadow(0px 0.5px);
 }
 
 .panel-footer{

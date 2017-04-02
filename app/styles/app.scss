@@ -3,25 +3,25 @@
 //Variables
 @import 'vars.scss';
 
+//Navigation
+@import 'nav.scss';
+
 //All things strictly text related
-@import 'text-style.scss';
+@import 'text.scss';
 
 //buttons
-@import 'button-style.scss';
+@import 'button.scss';
 
 //panels
 @import 'panel.scss';
 
+//wrappers
+@import 'wrappers.scss';
 
-.applicationWrapper{
-  background-color:$darkBlue;
-  background-image: radial-gradient(circle, transparent 70%, $mainBlue 60%);
-  background-size: 10px;
-  background-blend-mode: color-burn;
-  background-repeat: repeat;
-}
 
-html, body, .ember-view, .applicationWrapper{
+
+html, body, .ember-view, .applicationWrapper, .content-body{
+  vertical-align: top;
   height:100%;
 }
 

@@ -1,12 +1,10 @@
-﻿<p class="hidden-xs">Welcome to the index template!</p>
 <!--<iframe src="//giphy.com/embed/pFwRzOLfuGHok" width="480" height="299" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <p><a href="http://giphy.com/gifs/next-pFwRzOLfuGHok">via GIPHY</a></p>-->
 
 
 <!--Left side column on page-->
 <div class="row">
-  <div class="col-md-8">
-<div class="panel-group">
+  <div class="col-md-8 ideaCatalog">
 {{#each model as |idea|}}
 <div class=" col-sm-4 col-md-4">
   <div class="panel panel-default">
@@ -21,5 +19,8 @@
 </div>
 {{/each}}
 </div>
-  </div>
+<!--Right side column of the page-->
+<div class='col-md-4 updateCatalog'>
+  <h3 class='updateTitle'>Project Updates!</h3>
+</div>
 </div>

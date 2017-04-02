@@ -1,25 +1,21 @@
 ﻿<div class="container-fluid applicationWrapper">
-  <div class="content-head">
-    <ul class="nav navbar-nav navbar-left btn-group">
-      <li class="btn btn-default ">{{#link-to 'index'}}Home{{/link-to}}</li>
-      <li class="btn btn-default ">{{#link-to 'idea.new' }}Create Idea{{/link-to}}</li>
-      <li class="btn btn-danger  visible-xs" {{action 'logout'}}><a class='ember-view'>Logout</a></li>
+  <div class="row content-head">
+    <ul class="nav navbar-nav navbar-left btn-group col-md-8">
+      <li class="btn btn-default btn-nav ">{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li class="btn btn-default btn-nav">{{#link-to 'idea.new' }}Create Idea{{/link-to}}</li>
+      <li class="btn btn-danger  visible-xs btn-nav" {{action 'logout'}}><a class='ember-view'>Logout</a></li>
     </ul>
 
-<ul class="nav navbar-nav navbar-right hidden-xs">
+<div class="col-md-4 miniProfile">
 {{#if session.isAuthenticated}}
-  <li>
-    <p class="text-danger">{{session}}</p><p class="text-info">Fill this with login data</p>
-  </li>
-  <li>
+    <!--<p class="text-danger">{{session}}</p>--><p class="text-info">Fill this with login data</p>
     <button class="btn btn-danger btn-xs" {{action 'logout'}}>Logout</button>
-  </li>
 {{else}}
-<li><p class="text-info hidden-xs">You are not logged in</p></li>
+<p class="text-info hidden-xs">You are not logged in</p>
 {{/if}}
-</ul>
 </div>
-<div class="content-body">
+</div>
+<div class="content-body ">
 {{outlet}}
 </div>
 </div>

@@ -1,0 +1,43 @@
+@mixin panelStyle {
+  height:100%;
+  box-shadow: 2px 0.5px;
+  background-color:$panelColor;
+  overflow-y:scroll;
+  border-radius: 4px;
+
+}
+.applicationWrapper{
+  background-color:$darkBlue;
+  background-image: radial-gradient(circle, transparent 70%, $mainBlue 60%);
+  background-size: 20px;
+  background-blend-mode: color-burn;
+  background-repeat: repeat;
+  overflow-y: hidden ;
+  position:relative;
+}
+
+.ideaCatalog{
+  @include panelStyle;
+  float:left;
+  z-index: 1;
+  position: absolute;
+}
+.updateCatalog{
+  @include panelStyle;
+  float:right;
+  padding:0px;
+  margin-right:10px;
+  margin-left:0px;
+  z-index: 1;
+
+}
+
+.container-fluid{
+  width:100%;
+  padding:0px;
+}
+
+.mainPageDivision{
+  margin-left:0px;
+  margin-right:0px;
+}

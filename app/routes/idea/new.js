@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Route.extend({
 model(){
@@ -7,8 +8,8 @@ model(){
 
   actions:{
     submitIdea(newIdea){
-      console.log(newIdea.get('id'));
-      newIdea.save().then((responseIdea)=> {
+      newIdea.created = moment().format();
+      newIdea.save().then(()=> {
         newIdea.rollbackAttributes();
       }).catch(error => {
         console.log(error);
