@@ -7,10 +7,21 @@
 .panel-header{
 }
 
-.panel-body {
-  background-color: #c0c3c6;
+.panel-body, .panel-footer{
+  background-color: rgba(0,0,0,0.1);
+
+  &.hover{
+    background-color:#000;
+  }
 }
 
 .panel-footer{
+  border-top:0px;
+}
 
+
+.panel{
+  border:black;
+  border-width: 2px;
+  border-style:solid;
 }

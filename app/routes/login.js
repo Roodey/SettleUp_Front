@@ -9,17 +9,12 @@ export default Ember.Route.extend({
     login(providerName){
         get(this,'session').open('firebase', {provider: providerName}).then(data => {
           console.log(data);
-          const email = data.currentUser.email;
-          let userCheck;
 //Find out if this is a returning user
-          this.store.query('user',{
-            indexOn:'email',
-            orderBy: 'email',
-            equalTo: email
-          }).then(foundUsers =>
-            userCheck =  foundUsers.get('firstObject')
-          ).then(user => userCheck = user);
-          console.info(userCheck);
+
+          const user = this.store.queryRecord('user',{
+            email:data.currentUser.email,
+          });
+          console.info(user);
 
 //If the user was not found, create him
 //         if(userCheck === undefined){
