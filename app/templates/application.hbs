@@ -1,12 +1,12 @@
 ﻿<div class="container-fluid applicationWrapper">
   <div class="row content-head">
-    <ul class="nav navbar-nav navbar-left btn-group col-md-8">
+    <ul class="nav navbar-nav navbar-left btn-group col-md-8 col-sm-8">
       <li class="btn btn-default btn-nav ">{{#link-to 'index'}}Home{{/link-to}}</li>
       <li class="btn btn-default btn-nav">{{#link-to 'idea.new' }}Create Idea{{/link-to}}</li>
       <li class="btn btn-danger  visible-xs btn-nav" {{action 'logout'}}><a class='ember-view'>Logout</a></li>
     </ul>
 
-<div class="col-md-4 miniProfile">
+<div class="col-md-4 col-sm-4 miniProfile">
 {{#if session.isAuthenticated}}
     <!--<p class="text-danger">{{session}}</p>--><p class="text-info">Fill this with login data</p>
     <button class="btn btn-danger btn-xs" {{action 'logout'}}>Logout</button>

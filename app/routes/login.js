@@ -2,6 +2,9 @@ import Ember from 'ember';
 const {get} = Ember;
 
 export default Ember.Route.extend({
+  model(){
+    return this.store.createRecord('user');
+  },
 
 
 
@@ -9,32 +12,18 @@ export default Ember.Route.extend({
     login(providerName){
         get(this,'session').open('firebase', {provider: providerName}).then(data => {
           console.log(data);
+          let newUser = Model.user;
 //Find out if this is a returning user
-
-          const user = this.store.queryRecord('user',{
-            email:data.currentUser.email,
-          });
-          console.info(user);
-
-//If the user was not found, create him
-//         if(userCheck === undefined){
-//           console.log('Creating new user');
-//           const newUser = this.store.createRecord('user',{
-//             email: data.currentUser.email,
-//             displayName: data.currentUser.displayName
-//           });
-//           newUser.save();
-//         }
-////Delete this later.
-//         else{
-//           console.log("Welcome returning user!");
-//         }
+        newUser.save().then(response =>{
+          console.log(response)
+        }).catch(error => console.error(error));
 
 //Once login has been completed, transition to the index route.
           this.transitionTo('index');
-        });
+      });
 
-          },
+    },
+
     logout(){
       get(this,'session').close();
     }

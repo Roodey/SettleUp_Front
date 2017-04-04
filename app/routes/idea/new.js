@@ -9,6 +9,7 @@ model(){
   actions:{
     submitIdea(newIdea){
       newIdea.created = moment().format();
+      console.log(newIdea.created);
       newIdea.save().then(()=> {
         newIdea.rollbackAttributes();
       }).catch(error => {
