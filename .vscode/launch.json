@@ -10,23 +10,11 @@
           "request": "launch",
           "name": "Launch Chrome",
           "url": "http://localhost:4200/",
-          "port": 9223,
-          "userDataDir": "${workspaceRoot}/.vscode/chrome",
-          "sourceMaps": true,
           "sourceMapPathOverrides": {
             "SettleUp_Front/":"${workspaceRoot}/app/"
           }
         },
-        {
-          "type": "node",
-          "request": "launch",
-          "name": "deploy",
-          "program": "${workspaceRoot}/node_modules/ember-cli-bin/ember",
-          "args": [
-            "deploy",
-            "staging"
-          ]
-        },
+
         {
             "type": "node",
             "request": "launch",
