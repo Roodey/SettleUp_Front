@@ -7,6 +7,6 @@ export default Ember.Route.extend({
     }
   },
   model(){
-    return this.store.findAll('idea').then(ideas => ideas.sortBy('created'));
+    return this.store.findAll('idea')/*.then(ideas => ideas.sortBy('created'))*/;
   },
 });

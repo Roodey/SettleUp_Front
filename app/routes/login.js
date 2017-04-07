@@ -13,9 +13,9 @@ export default Ember.Route.extend({
         get(this,'session').open('firebase', {provider: providerName}).then(data => {
           console.log(data);
 //Find out if this is a returning user
-        newUser.save().then(response =>{
-          console.log(response);
-        }).catch(error => console.error(error));
+       // newUser.save().then(response =>{
+       //   console.log(response);
+       // }).catch(error => console.error(error));
 
 //Once login has been completed, transition to the index route.
           this.transitionTo('index');
