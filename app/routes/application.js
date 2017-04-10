@@ -14,11 +14,14 @@ export default Ember.Route.extend({
     },
     willTransition(){
       const session = get(this,'session');
-      this.controller.set('model',{
-        email: session.content.currentUser.email,
-        displayName:session.content.currentUser.displayName,
-        provider:session.content.provider
-      });
+      if(session.content.isAuthenticated){
+        this.controller.set('model',{
+          email: session.content.currentUser.email,
+          displayName:session.content.currentUser.displayName,
+          provider:session.content.provider
+        });
+
+      }
 
     }
   }
