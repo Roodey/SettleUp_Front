@@ -14,13 +14,17 @@ export default Ember.Route.extend({
     },
     willTransition(){
       const session = get(this,'session');
-      if(session.content.isAuthenticated){
+      console.log(session.content.isAuthenticated);
+      if(session.content.isAuthenticated === true){
         this.controller.set('model',{
           email: session.content.currentUser.email,
           displayName:session.content.currentUser.displayName,
           provider:session.content.provider
         });
 
+      }
+      else{
+        this.transitionTo('login');
       }
 
     }

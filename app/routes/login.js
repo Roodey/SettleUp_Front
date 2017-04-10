@@ -17,12 +17,10 @@ export default Ember.Route.extend({
           email: data.currentUser.email,
           displayName: data.currentUser.displayName,
           provider:data.providerName
-        }).save().then(()=>{
-          this.transitionTo('index');
-        });
-      });
+        }).save().catch(error=>console.error(error));
+      }).catch(error => console.error(error));
 
-      //this.transitionTo('index');
+      this.transitionTo('index');
     },
 
     logout(){
