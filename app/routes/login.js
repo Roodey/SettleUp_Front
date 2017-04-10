@@ -1,4 +1,5 @@
 import Ember from 'ember';
+//import Moment from 'moment'; decide whether or not to use this date object here.
 const {get} = Ember;
 
 export default Ember.Route.extend({
@@ -10,17 +11,18 @@ export default Ember.Route.extend({
 
   actions:{
     login(providerName){
-        get(this,'session').open('firebase', {provider: providerName}).then(data => {
-          console.log(data);
-//Find out if this is a returning user
-       // newUser.save().then(response =>{
-       //   console.log(response);
-       // }).catch(error => console.error(error));
-
-//Once login has been completed, transition to the index route.
+      get(this,'session').open('firebase', {provider: providerName}).then(data => {
+        console.log(data);
+        this.store.createRecord('user',{
+          email: data.currentUser.email,
+          displayName: data.currentUser.displayName,
+          provider:data.providerName
+        }).save().then(()=>{
           this.transitionTo('index');
+        });
       });
 
+      //this.transitionTo('index');
     },
 
     logout(){

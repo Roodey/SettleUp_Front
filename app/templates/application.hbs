@@ -8,7 +8,7 @@
 
 <div class="col-md-4 col-sm-4 miniProfile">
 {{#if session.isAuthenticated}}
-    <!--<p class="text-danger">{{session}}</p>--><p class="text-info">Fill this with login data</p>
+  <p>Welcome {{model.displayName}}!</p>
     <button class="btn btn-danger btn-xs" {{action 'logout'}}>Logout</button>
 {{else}}
 <p class="text-info hidden-xs">You are not logged in</p>
