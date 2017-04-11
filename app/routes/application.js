@@ -14,8 +14,7 @@ export default Ember.Route.extend({
     },
     willTransition(){
       const session = get(this,'session');
-      console.log(session.content.isAuthenticated);
-      if(session.content.isAuthenticated === true){
+      if(session.content.currentUser !== undefined){
         this.controller.set('model',{
           email: session.content.currentUser.email,
           displayName:session.content.currentUser.displayName,
