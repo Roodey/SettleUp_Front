@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
   actions:{
     newDetail(){
-      console.log('bing');
+
     }
   },
 });
