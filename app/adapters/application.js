@@ -1,7 +1,7 @@
-import WebApiAdapter from 'ember-web-api/adapters/web-api';
+import DS from 'ember-data';
 
-export default WebApiAdapter.extend({
-  //host:'https://settleup.azurewebsites.net', //.NET WEP API
-  //host:'http://localhost:1337', //SAILS
-  namespace:'api'
+export default DS.RESTAdapter.extend({
+  host:'http://localhost:1337',
+  namespace:'api',
+  coalesceFindRequests:true
 });
