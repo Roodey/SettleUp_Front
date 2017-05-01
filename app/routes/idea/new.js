@@ -1,22 +1,26 @@
 import Ember from 'ember';
-import moment from 'moment';
 const {get} = Ember;
 
 export default Ember.Route.extend({
 model(){
-    return this.store.createRecord('idea');
+    const session = get(this,'session');
+    return this.store.createRecord('idea',{
+      author:{
+        email: session.content.currentUser.email,
+        displayName: session.content.currentUser.displayName
+      }
+    });
+
   },
 
   actions:{
     submitIdea(newIdea){
-      newIdea.created = moment().format();
-      console.log(newIdea.created);
       newIdea.save().then(()=> {
         newIdea.rollbackAttributes();
       }).catch(error => {
         console.log(error);
       });
-      this.transitionTo('index');
+      //this.transitionTo('index');
     }
   },
   willTransition(){
