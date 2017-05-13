@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  //host:'http://localhost:1337',
-  //namespace:'api',
+  host:'https://sheltered-journey-27877.herokuapp.com',
+  namespace:'api',
   coalesceFindRequests:true
 });
