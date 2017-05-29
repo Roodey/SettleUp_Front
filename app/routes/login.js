@@ -15,12 +15,13 @@ export default Ember.Route.extend({
         console.log(data);
         this.store.createRecord('user',{
           email: data.currentUser.email,
-          displayName: data.currentUser.displayName,
-          provider:data.providerName
+          password: data.uid,
+          password_confirmation:data.uid,
+          provider: data.provider
         }).save().catch(error=>console.error(error));
       }).catch(error => console.error(error));
 
-      this.transitionTo('index');
+      //this.transitionTo('index');
     },
 
     logout(){

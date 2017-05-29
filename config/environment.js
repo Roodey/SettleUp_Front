@@ -17,6 +17,11 @@ module.exports = function(environment) {
     torii: {
       sessionServiceName:'session'
     },
+
+    DS:{
+      host: 'http://localhost:4000',
+      namespace: 'api'
+    },
     // if using ember-cli-content-security-policy
     contentSecurityPolicy: {
       'script-src': "'self' 'unsafe-eval' apis.google.com",
@@ -61,7 +66,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://pacific-lake-83262.herokuapp.com';
   }
 
   return ENV;

@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
-
+  - $HOME/.npm
+  - $HOME/.cache
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower phantomjs-prebuilt
+- bower --version
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: AdCIPMx/vlGw6aD7Wtj3t6oKqqSycNd82fZ+nAf/3HF5h6ex6/sVpZ5qUfnkfSLMFKXNRW3I+WVdbozKaWbCwWYiCXSYDJMaURPeOxu0kgItPVrqlKCeacjT4KMS7wjSk+Cq4Nns0sUmdOsXPk7ScrM4JLT/x6bhNOFXVtHMdtaQQ80VvU7qnXBHPvcqN9HijyEXtEC/nSpzoYVbNgjj/IzaNgXHYPZXbzf40k5mxKJdos6CRbGbpJ+b4Ei1KwZfsTVpMbGSantuhdK52QpMFg8XGR//d25lO0o7e1UeXh5yodKA5Dzvv2N4CBRSDZU5ZEQ8q2ulymlZARADu4hC9ZQNg+YJpkGdtmStd2dl0T+ldC4Q8gEQS72uTGKA5Qn4JMKHwpXyaKVaG6wWRNg/i2eGt9V2BPiIIPnSMOIO0mXGrWxY94J/3GYfd5i2TxoBaVJp/1BVCoP/IJ6vLes0i2EgPkSrGDOzdePLz5GfzEHolR2Xm11JY92K+mK6Pm6mi8gneqgCbDB1yUc8PH7MNjwFkMVYsgHQrhD/8hDAbL85dhy6p6nMyBfKJ2xjN4LJWn26viW50u1PhHaVBDPHmlnybDg3FjLcieeOelhbnOzCEQkd+wuEgZg4HmCe1OY2K0lYEl6gv/Rh9CE+jg22cvRydNV+Yq97ltNsi96+NjQ=
+  app: afternoon-lowlands-90256
+  on:
+    repo: Roodey/SettleUp_Front
