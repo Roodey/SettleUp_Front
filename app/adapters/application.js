@@ -1,7 +1,23 @@
 import DS from 'ember-data';
+import config from '../config/environment';
+import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 
-export default DS.RESTAdapter.extend({
-  //host:'https://sheltered-journey-27877.herokuapp.com',
-  namespace:'api',
-  coalesceFindRequests:true
+export default DS.JSONAPIAdapter.extend(DataAdapterMixin,{
+  host:config.DS.host,
+  namespace:config.DS.namespace,
+  authorizer:'authorizer:oauth2',
+  //coalesceFindRequests:true
+
+  urlForCreateRecord(modelName){
+    switch(modelName){
+      case 'user':
+      case 'users':
+        return this._super.apply(this,arguments).replace('users','register');
+      default:
+        return this._super(...arguments);
+    }
+
+  }
+
+
 });
