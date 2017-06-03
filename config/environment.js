@@ -7,26 +7,15 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'hash',
 
-    firebase: {
-      apiKey: "AIzaSyCjit5WKHy6laKePU6XprF2XrvtN9MNeSc",
-      authDomain: "settleup-cb4db.firebaseapp.com",
-      databaseURL: "https://settleup-cb4db.firebaseio.com",
-      storageBucket: "settleup-cb4db.appspot.com",
-      messagingSenderId: "477462892458"
-    },
-    torii: {
-      sessionServiceName:'session'
+    'ember-simple-auth':{
+      authenticationRoute:'auth.login',
+      routeIfAlreadyAuthenticated:'app.index',
+      routeAfterAuthentication:'app.index'
     },
 
     DS:{
       host: 'http://localhost:4000',
       namespace: 'api'
-    },
-    // if using ember-cli-content-security-policy
-    contentSecurityPolicy: {
-      'script-src': "'self' 'unsafe-eval' apis.google.com",
-      'frame-src': "'self' https://*.firebaseapp.com",
-      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
     },
 
     EmberENV: {

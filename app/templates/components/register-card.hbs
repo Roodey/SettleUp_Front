@@ -1,0 +1,28 @@
+{{#x-card
+  onsubmit=attrs.onsubmit
+  title="Welcome to Planit"
+  buttonText='Register'}}
+  <div class='row'>
+    {{x-input
+      value=model.email
+      classNames='col-sm-12'
+      type='email'
+      label='Username'}}
+  </div>
+  <div class='row'>
+    {{x-input
+      value=model.password
+      classNames='col-sm-12'
+      type='password'
+      label='Password'}}
+  </div>
+  <div class='row'>
+    {{x-input
+      value=model.passwordConfirmation
+      classNames='col-sm-12'
+      type='password'
+      label='Confirm Password'}}
+  </div>
+
+  {{/x-card}}
+

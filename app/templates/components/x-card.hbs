@@ -1,0 +1,14 @@
+<div class='panel-head'>
+  {{#if title}}
+    <span> {{title}}</span>
+  {{/if}}
+  {{yield}}
+</div>
+{{#if attrs.onsubmit}}
+ <div class='panel-body'>
+   <button disabled={{buttonDisabled}} class='btn btn-default btn-primary'
+      onclick={{attrs.onsubmit}}>
+      {{buttonText}}
+   </button>
+</div>
+{{/if}}

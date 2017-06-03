@@ -1,28 +1,16 @@
 <!--<iframe src="//giphy.com/embed/pFwRzOLfuGHok" width="480" height="299" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <p><a href="http://giphy.com/gifs/next-pFwRzOLfuGHok">via GIPHY</a></p>-->
 
+<div class='container'>
+  <p>Welcome to PlanIt! Please login or register</p>
 
-<!--Left side column on page-->
-<div class="row">
-  <div class="col-md-8 col-sm-12 ideaCatalog">
-{{#each model as |idea|}}
-<div class=" col-sm-4 col-md-4">
-  <div class="panel panel-default">
-    <div class="panel-heading">{{idea.title}}</div>
-    <div class="panel-body">{{idea.description}}</div>
-    <div class="panel-footer">
-      <div class="float-md-right">
-      {{#link-to "idea.index" idea.id}}
-        View
-      {{/link-to}}
-    </div>
-    </div>
-  </div>
-</div>
-{{/each}}
-</div>
-<!--Right side column of the page-->
-<div class='col-md-4 hidden-sm updateCatalog'>
-  <h3 class='updateTitle'>Project Updates!</h3>
-</div>
+  {{#link-to "auth.login"}}
+  Login
+  {{/link-to}}
+
+  {{#link-to "auth.register"}}
+  register
+  {{/link-to}}
+
+
 </div>

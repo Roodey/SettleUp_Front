@@ -12,6 +12,12 @@ Router.map(function() {
     this.route('index',{path:'/:idea_id'});
     this.route('new');
   });
+
+  this.route('auth', function() {
+    this.route('login');
+    this.route('register');
+  });
+  this.route('app', function() {});
 });
 
 export default Router;

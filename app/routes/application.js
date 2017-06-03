@@ -1,32 +1,14 @@
 import Ember from 'ember';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 const {get} = Ember;
-export default Ember.Route.extend({
-  // beforeModel(){
-  //   return get(this,'session').fetch().catch(()=>{
-  //     this.transitionTo('login');
-  //   });
-  // },
+
+export default Ember.Route.extend(ApplicationRouteMixin,{
 
   actions:{
     logout(){
-      get(this,'session').close();
-      this.transitionTo('login');
+      get(this,'session').invalidate();
     },
-    willTransition(){
-      const session = get(this,'session');
-      if(session.content.currentUser !== undefined){
-        this.controller.set('model',{
-          email: session.content.currentUser.email,
-          displayName:session.content.currentUser.displayName,
-          provider:session.content.provider
-        });
 
-      }
-      else{
-        this.transitionTo('login');
-      }
-
-    }
   }
 
   });
