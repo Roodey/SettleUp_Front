@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'settle-up-front',
     environment: environment,
     rootURL: '/',
-    locationType: 'hash',
+    locationType: 'auto',
 
     'ember-simple-auth':{
       authenticationRoute:'auth.login',
@@ -14,7 +14,8 @@ module.exports = function(environment) {
     },
 
     DS:{
-      host: 'http://localhost:4000',
+      //host: 'http://localhost:1337' //SailsJs Api
+      host: 'http://localhost:4000', //Phoenix Api
       namespace: 'api'
     },
 
