@@ -1,9 +1,9 @@
-﻿import DS from 'ember-data';
+﻿
+import DS from 'ember-data';
 
 export default DS.Model.extend({
   title: DS.attr('string'),
-  author: DS.belongsTo('user'),
+//  contributers: DS.hasMany('user'),
   description: DS.attr('string'),
-  created: DS.attr('date'),
-  content: DS.hasMany('detail')
+  created: DS.attr('string'),
 });
